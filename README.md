@@ -1,4 +1,4 @@
-# Stanford_University_C106B_Programming_Abstractions_Course
+# Stanford_University_C106B_Programming_Abstractions_2017
 Course covers such advanced programming topics as recursion, algorithmic analysis, and data abstraction using the C++ programming language
 
 Completed Assignments (C++):
