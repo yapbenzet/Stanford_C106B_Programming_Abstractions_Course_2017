@@ -22,7 +22,7 @@ each letter of the alphabet appears in that file. Because there are 26 numbers t
 printed, CountLetters needs to create a Vector. 
 
 
-Assignment Two (Completed Jan/17/2017):
+Assignment Two (Completed Jan/19/2017):
 ==========================
 Problem 1: Vectors (AKA C++ ArrayLists…) 
 a) How would you declare a Vector that stores eMailMsgs? 
