@@ -42,7 +42,7 @@ Problem 5: Minesweeper
 In the game of Minesweeper, a player searches for hidden bombs on a rectangular grid.  The game board is represented by a grid of booleans marking bomb locations. A grid value is true if there is bomb at that location, false otherwise.  Here is an example grid: (0,0) T F F F F T F F F F F T T T F T F T T F F F F F F F T F F F F F F F F F Given such a grid of bomb locations, the function MakeGridOfCounts constructs a new grid of integers storing the count of bombs in each neighborhood.  The neighborhood for a location includes the location itself and its eight adjacent locations.  In the returned grid, each value will be a number from 0 to 9. If passed the boolean grid above, MakeGridOfCounts returns: (0,0) 1 1 0 0 2 2 3 3 2 1 4 3 3 3 2 1 3 2 3 4 3 2 2 1 1 2 1 1 0 0 0 1 1 1 0 0 The function is passed the grid by reference, and returns an int grid created as described. 
 
 
-Assignment Two (Completed Jan/18/2017):
+Assignment Three (Completed Jan/28/2017):
 ==========================
 Problem 1: Set Callbacks 1. When using a Set to store user-defined types, it is the client's responsibility to write the appropriate comparison callback and pass that function to the Set constructor. The comparison callback also allows the client to customize how entries are compared (and thus control the order they are returned by the iterator) as well as determining which entries will be coalesced as duplicates. 
 a) You're building an address book and plan on using a Set to store the entries. Each entry is represented by this structure: struct entryT {  string firstName;  string lastName;  string phoneNumber; }; 
