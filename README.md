@@ -61,3 +61,16 @@ Problem 5: ReverseString Given a string, create a function ReverseString that re
 Problem 6: GCD The greatest common divisor (g.c.d.) of two nonnegative integers is the largest integer that divides evenly into both. In the third century B.C., the Greek mathematician Euclid discovered that the greatest common divisor of x and y can always be computed as follows: If x is evenly divisible by y, then y is the greatest common divisor. Otherwise, the greatest common divisor of x and y is always equal to the greatest common divisor of y and the remainder of x divided by y. Use Euclid's insight to write a recursive function int GCD(int x, int y) that computes the greatest common divisor of x and y.
 
 Problem 8: Imagine that you have just been hired by a local telephone company to write a function ListMnemonics that will generate all possible letter combinations that correspond to a given number, represented as a string of digits. For example, if you call ListMnemonics("723") your program should generate the following 27 possible letter combinations that correspond to that prefix: PAD PBD PCD RAD RBD RCD SAD SBD SCD PAE PBE PCE RAE RBE RCE SAE SBE SCE PAF PBF PCF RAF RBF RCF SAF SBF SCF
+
+
+Assignment Four (Iterative versions completed Jan/29/2017):
+==========================
+Problem 4: Linked List Warmup
+Write the following linked list functions. Provide both iterative and a recursive
+forumlations. Cell is defined as follows: struct Cell { Cell *next; int value; };
+a) Write a function ConvertToList which takes in a Vector of ints and converts it into a
+linked list. Assume the Vector has at least one element in it.
+b) Write a function which sums the values of a linked list.
+int SumList(Cell *list)
+
+Problem 6: Append.  Write a function that given two lists will append the second list onto the first. For example, given the first list (1 4 6) and the second list (3 19 2), the function would destructively modify the first list to contain (1 4 6 3 19 2). It is easiest to write this function recursively. Be sure to handle the case when one or both lists are empty.
