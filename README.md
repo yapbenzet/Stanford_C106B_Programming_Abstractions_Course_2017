@@ -63,7 +63,7 @@ Problem 6: GCD The greatest common divisor (g.c.d.) of two nonnegative integers 
 Problem 8: Imagine that you have just been hired by a local telephone company to write a function ListMnemonics that will generate all possible letter combinations that correspond to a given number, represented as a string of digits. For example, if you call ListMnemonics("723") your program should generate the following 27 possible letter combinations that correspond to that prefix: PAD PBD PCD RAD RBD RCD SAD SBD SCD PAE PBE PCE RAE RBE RCE SAE SBE SCE PAF PBF PCF RAF RBF RCF SAF SBF SCF
 
 
-Assignment Four (Iterative versions completed Jan/29/2017):
+Assignment Four (Iterative and Recursive versions completed Jan/29/2017):
 ==========================
 Problem 4: Linked List Warmup
 Write the following linked list functions. Provide both iterative and a recursive
