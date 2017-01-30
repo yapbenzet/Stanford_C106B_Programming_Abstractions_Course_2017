@@ -102,6 +102,43 @@ int SumList(const Listo& l)
 	return sum;
 }
 
+//-------------RECURSION TESTS------------------------------------------------------
+
+void recursivePrint(Cell * ptr) {
+	if (ptr == nullptr)
+		return;
+	cout << ptr->value << " ";
+	recursivePrint(ptr->next);
+}
+
+int recursiveSumList(Cell * ptr) {
+	if (ptr == nullptr)
+		return 0;
+	return ptr->value + recursiveSumList(ptr->next);
+}
+
+
+Cell * recursiveCovertToLinkedList(vector<int> v, int index)
+{
+	if (index == v.size())
+		return nullptr;
+	
+	Cell * ptr = new Cell(v[index]);
+	ptr->next = recursiveCovertToLinkedList(v, index + 1);
+	return ptr;
+}
+
+//@brief Append the contents of one linked list to the end of another (DEEP COPY)
+Cell * recursiveAppend(Cell * otherStart)
+{
+	if (otherStart == nullptr)
+		return nullptr;
+	
+	Cell * c = new Cell(otherStart->value);
+    c->next = recursiveAppend(otherStart->next);
+	return c;
+}
+
 
 
 int main() {
@@ -112,7 +149,7 @@ int main() {
 	
 	//read in all the values into a vector of ints
 	vector<int>v;
-	for (int i = 0; i < 2; ++i)
+	for (int i = 0; i < 3; ++i)
 	{
 		cout << "(" << i + 1 << "): ";
 		cin >> temp;
@@ -121,22 +158,41 @@ int main() {
 
 	//covert that vector into a linked list
 	l = ConvertToList(v);
+	//convert recursively
+	Listo * rListo;
+	Cell * c = recursiveCovertToLinkedList(v, 0);
 	
 	//print to verify the contents of the new linked list
 	l->print();
+	cout << "[Recursive] print function: ";
+	recursivePrint(c);
+	cout << endl;
 
 	//sum the values of the linked list
 	cout << "The sum of all values in the list is: " << SumList(*l) << endl;
+	cout << "[Recursive] The sum of all values in the list is: " << recursiveSumList(l->top) << endl;
 
 	//append a list onto another
 	vector<int> v1 = { 1, 4, 6 };
 	vector<int> v2 = { 3, 19, 2 };
+	vector<int> v3 = { 7, 5, 666 };
 	Listo * list1 = ConvertToList(v1);
-	Listo * list2 = ConvertToList(v2);
-
-	list1->append(list2);
-	//print to verify the contents of linked list - 1
+	cout << "List 1: ";
 	list1->print();
-
+	Listo * list2 = ConvertToList(v2);
+	cout << "List 2: ";
+	list2->print();
+	Listo * list3 = ConvertToList(v3);
+	cout << "List 3: ";
+	list3->print();
+	list1->append(list2);
+	//append recursivel-------------
+	Cell * runner;
+	//iterate to the end of the linked list
+	for (runner = list1->top; runner->next != nullptr; runner = runner->next) {}
+	runner->next = (list3->top);
+	
+	//print to verify the contents of linked list - 1
+	recursivePrint(list1->top);
 	return 0;
 }
