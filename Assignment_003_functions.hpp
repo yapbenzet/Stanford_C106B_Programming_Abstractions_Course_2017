@@ -116,6 +116,30 @@ int GCD(int x, int y) {
 	return GCD(y, x % y);
 }
 
+//Problem SEVEN-------------------------------------------------------------------------
+bool IsMeasurable(int target, vector<int>& weights) {
+
+	//stopping case
+	if (index == weights.size())
+		return false;
+
+    
+    int sum = 0;
+    for (int i = index ; i< weights.size() ; ++i)
+    {
+        sum += weights[i];
+        
+        if (target == sum)
+            return true;
+        
+        if (target + weights[index] == weights[i])
+            return true;
+        }
+    
+    index++;
+    
+	return IsMeasurable(target, weights);	
+}
 
 //Problem EIGHT------------------------------------------------
 
