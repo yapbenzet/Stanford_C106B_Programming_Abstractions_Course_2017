@@ -118,7 +118,6 @@ int GCD(int x, int y) {
 
 //Problem SEVEN-------------------------------------------------------------------------
 bool IsMeasurable(int target, vector<int>& weights) {
-
 	//stopping case
 	if (index == weights.size())
 		return false;
