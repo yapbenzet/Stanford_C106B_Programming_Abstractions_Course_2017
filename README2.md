@@ -3,7 +3,7 @@ Course covers such advanced programming topics as recursion, algorithmic analysi
 
 Completed Assignments (C++):
 
-Recursion Assignment One (Completed Feb/02/2017):
+Recursion Assignment Four (Completed Feb/02/2017):
 ==========================
 
 Warmup A: Binary is a base-2 number system instead of the decimal (base-10) system we are familiar with. 
@@ -26,5 +26,51 @@ The recursive insight to this problem is to recognize that the middlemost tick m
 void DrawRuler(double x, double y, double w, double h)
 
 
-Assignment One (Completed Feb/02/2017):
+Assignment Six (Completed Feb/07/2017):
 ==========================
+Problem 2: A simple class
+Design an interface for the Rectangle class. We will be keeping track of its size as well
+as its location, and should allow the user to find the rectangle’s perimeter and area. You
+should also provide a way for the user to scale the rectangle by some amount and
+translate it in space.
+Problem 3: Function Pointers and Templates
+a) Write a generic function FindMax that searches a vector to find the largest element and
+returns it. The two arguments to the function are the vector and a comparison function.
+The comparison function should take two elements and return an integer that is negative
+if the first is less than the second, zero if the two are equal, and positive otherwise. The
+second parameter should be optional, if not given, the default comparison of built-in
+relational operators is used. Your function may assume that the vector has at least one
+element. FindMax should be written as a template and must work for vectors of any type.
+b) Add the necessary code below to print the name of the safest car from the vector. The
+safest car is the one with the most airbags; among cars with the same number of airbags,
+the heavier car is safer. You should use the FindMax function from part a.
+struct Car { string name; int weight; int numAirbags;};
+Problem 4: Templatized Functions
+Write a function Filter that removes all elements from a Queue that fits a user-supplied
+criteria. The function will take two parameters:
+• A Queue, passed by reference, of the elements you want to filter.
+• A function pointer to a bool function with one parameter; the type of the
+parameter is the same as the one stored in the Queue. The bool function returns
+true if the parameter fits a certain criteria. This type of function (one that returns a
+boolean) is sometimes called a predicate function.
+For example, let's say that I'm cleaning out all of the recording in my DVR. The
+information regarding the individual recordings is kept in the following struct:
+struct recordingT { string title; string genre; int rating;};
+If I want to remove all animated recordings with a rating of less than 8, I would pass a
+pointer to the following function:
+bool IsBadAnimation(recordingT show) { return (show.genre == "animation" && show.rating < 8); }
+If an element contained in the Queue causes the user-supplied function to return true, it
+should be removed from the Queue. In addition, function Filter should support Queues
+of any type.
+Problem 5: More Templatized Functions
+a) Write a templatized function RemoveDuplicates that finds all duplicate elements in a
+Vector and removes each appearance of the element beyond the first. For example, if it
+was passed the Vector [1, 2, 3, 4, 2, 3, 3] it would modify the Vector to be [1, 2, 3, 4]. It
+is passed the Vector by reference as well as a comparison function which two elements
+and returns an integer that is less than, equal to, or greater than zero depending on
+whether the first element is less than, equal to, or greater than the second element,
+respectively.
+b) Suppose you have a Vector of ints, and you want only one occurrence of a number
+with a particular absolute value. That is, you only want one of 2 and -2 to be in the vector
+(although you don't care which it is). Write a callback function to accomplish this and
+show how you would call your function from part a to use it
