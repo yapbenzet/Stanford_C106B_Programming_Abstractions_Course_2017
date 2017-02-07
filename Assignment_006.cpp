@@ -174,7 +174,34 @@ void RemoveDuplicates(vector<Type> & v, int(*funct)(Type& a, Type& b))
 }
 
 //Problem Five-B----------------------
+int absoluteCompare(int& a, int& b)
+{
+	if (abs(a) == abs(b))
+		return 0;
+	
+	return -1;
+}
 
+template <typename T>
+void AbsoluteFilter( vector<T> &v, int (*funct)(T& a, T& b)) {
+	vector<T> container;
+	bool uniqueValueFlag; 
+	for (unsigned i = 0; i < v.size(); ++i)
+	{
+		uniqueValueFlag = true;
+		for (unsigned j = 0; j < container.size(); ++j)
+		{
+			if (funct(v[i], container[j]) == 0)
+			{
+				uniqueValueFlag = false;
+				break;
+			}
+		}
+		if (uniqueValueFlag) { container.push_back(v[i]); }
+	}
+	v = container;
+
+}
 
 
 
@@ -239,12 +266,22 @@ int main() {
 	//print raw vector
 	for (int a : v5) { cout << a << " "; } cout << endl;
 
-
 	RemoveDuplicates(v5, jar);
 	
 	//print processed vector
 	for (int a : v5) { cout << a << " "; } cout << endl;
 
+//Problem Five-B----------------------
+	int(*boo)(int& a, int&b);
+	boo = absoluteCompare;
+	vector<int> v5b = { 1, -1, -2, 2, 2, -3, 3, 3, -4, 4, -5,5, 6, -6, 7, -7, 8, -8, 8, -9, 9, 9, -10 };
+	//print raw vector
+	for (int a : v5b) { cout << a << " "; } cout << endl;
+
+	AbsoluteFilter(v5b, boo);
+
+	//print processed vector
+	for (int a : v5) { cout << a << " "; } cout << endl;
 
 	return 0;
 }
