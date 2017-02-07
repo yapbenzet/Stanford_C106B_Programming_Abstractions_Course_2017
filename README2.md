@@ -32,7 +32,8 @@ Problem 2: A simple class
 Design an interface for the Rectangle class. We will be keeping track of its size as well
 as its location, and should allow the user to find the rectangle’s perimeter and area. You
 should also provide a way for the user to scale the rectangle by some amount and
-translate it in space.
+translate it in space
+
 Problem 3: Function Pointers and Templates
 a) Write a generic function FindMax that searches a vector to find the largest element and
 returns it. The two arguments to the function are the vector and a comparison function.
@@ -41,10 +42,12 @@ if the first is less than the second, zero if the two are equal, and positive ot
 second parameter should be optional, if not given, the default comparison of built-in
 relational operators is used. Your function may assume that the vector has at least one
 element. FindMax should be written as a template and must work for vectors of any type.
+
 b) Add the necessary code below to print the name of the safest car from the vector. The
 safest car is the one with the most airbags; among cars with the same number of airbags,
 the heavier car is safer. You should use the FindMax function from part a.
 struct Car { string name; int weight; int numAirbags;};
+
 Problem 4: Templatized Functions
 Write a function Filter that removes all elements from a Queue that fits a user-supplied
 criteria. The function will take two parameters:
@@ -62,6 +65,7 @@ bool IsBadAnimation(recordingT show) { return (show.genre == "animation" && show
 If an element contained in the Queue causes the user-supplied function to return true, it
 should be removed from the Queue. In addition, function Filter should support Queues
 of any type.
+
 Problem 5: More Templatized Functions
 a) Write a templatized function RemoveDuplicates that finds all duplicate elements in a
 Vector and removes each appearance of the element beyond the first. For example, if it
@@ -70,6 +74,7 @@ is passed the Vector by reference as well as a comparison function which two ele
 and returns an integer that is less than, equal to, or greater than zero depending on
 whether the first element is less than, equal to, or greater than the second element,
 respectively.
+
 b) Suppose you have a Vector of ints, and you want only one occurrence of a number
 with a particular absolute value. That is, you only want one of 2 and -2 to be in the vector
 (although you don't care which it is). Write a callback function to accomplish this and
