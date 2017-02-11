@@ -77,5 +77,19 @@ respectively.
 
 b) Suppose you have a Vector of ints, and you want only one occurrence of a number
 with a particular absolute value. That is, you only want one of 2 and -2 to be in the vector
-(although you don't care which it is). Write a callback function to accomplish this and
-show how you would call your function from part a to use it
+
+
+Assignment Six (Completed Feb/07/2017):
+==========================
+Problem 1: Client-side vs. Implementation-side Consider a basic Stack class built on top of a Vector: template <typename Type> class Stack { public: Stack(); ~Stack(); void push(Type elem); Type pop(); bool isEmpty(); private: Vector<Type> elems; } 
+a) Say we as the implementers want to add a method that will reverse the elements that are currently in the Stack.  How can we do it? 
+b) Now write another Reverse function, this time as a client of the stack class
+
+Problem 4: Deques A deque (pronounced “deck”) is a double-ended queue where items can be inserted and removed from both ends of the deque. This structure can be used to simulate both a stack and a queue, and is useful for array operations where we only want to insert at the beginning or end of a list of items.  How would we implement a deque efficiently with linked lists?  Would it be preferable to use a singly-linked or doubly-linked list?  What functions would it need to implement?  How could it be used to simulate a stack or a queue? Note that you should not write any code for this problem. Instead, answer the questions above and sketch out the general form of the implementation, but do not implement it.
+The lists in problems 5 and 6 use the structure definition: struct Node { int value; Node* next;
+}; These linked list problems will hopefully get you thinking about how to manipulate this data structure; you will need these skills for your current assignment. 
+
+Problem 5: Stutter Write a function Stutter that given a linked list will duplicate every cell in the list. If the incoming list contains the elements (11 5 21 7 7), the function will destructively modify the list to contain (11 11 5 5 21 21 7 7 7 7). 
+
+Problem 6: RemoveDuplicates (a.k.a. Unstutter) Write a function RemoveDuplicates that given a linked list will remove any neighboring duplicates found in the list. If the incoming list is (5 5 22 37 89 89 15 15 22) the function will destructively modify the list to contain (5 22 37 89 15 22). Don't worry about handling duplicate sequences longer than 2 or duplicates that aren't right next to each other in the list.
+
