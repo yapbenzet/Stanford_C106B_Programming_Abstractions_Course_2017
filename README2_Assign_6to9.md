@@ -79,7 +79,7 @@ b) Suppose you have a Vector of ints, and you want only one occurrence of a numb
 with a particular absolute value. That is, you only want one of 2 and -2 to be in the vector
 
 
-Assignment Six (Completed Feb/07/2017):
+Assignment Seven (Completed Feb/08/2017):
 ==========================
 Problem 1: Client-side vs. Implementation-side Consider a basic Stack class built on top of a Vector: template <typename Type> class Stack { public: Stack(); ~Stack(); void push(Type elem); Type pop(); bool isEmpty(); private: Vector<Type> elems; } 
 a) Say we as the implementers want to add a method that will reverse the elements that are currently in the Stack.  How can we do it? 
