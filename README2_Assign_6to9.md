@@ -93,3 +93,19 @@ Problem 5: Stutter Write a function Stutter that given a linked list will duplic
 
 Problem 6: RemoveDuplicates (a.k.a. Unstutter) Write a function RemoveDuplicates that given a linked list will remove any neighboring duplicates found in the list. If the incoming list is (5 5 22 37 89 89 15 15 22) the function will destructively modify the list to contain (5 22 37 89 15 22). Don't worry about handling duplicate sequences longer than 2 or duplicates that aren't right next to each other in the list.
 
+
+Assignment Eight (Completed Feb/23/2017):
+==========================
+Problem 3: Tree Equal
+Write a function which takes two binary trees of type nodeT* as defined above and returns
+a boolean value which indicates whether the two trees are equal (i.e. have the same structure
+and values).
+
+Problem 4: TrimLeaves
+a) Write a function TrimLeaves(nodeT * & tree), which will take a binary tree and remove all of
+its leaves. 
+
+Problem 5: Balanced Trees
+Write recursive implementations of the two functions:
+int TreeHeight(nodeT *t);
+bool IsBalanced(nodeT *t);
