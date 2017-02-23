@@ -159,24 +159,46 @@ int TreeHeight(nodeT * root)
 /*Problem 5: Balanced Trees
 Write a fuction to determine if a tree is balanced (bool)
 */
-bool isBalancedTree(nodeT * root)
-{
 
-	return true;
+//calculate the left subtree of a given node
+int lengthOfLEFTSubTree(nodeT * root)
+{
+	if (root == nullptr )
+		return 0;
+
+	return (1 + lengthOfLEFTSubTree(root->left));
 }
 
+//calculate the right subtree of a given node
+int lengthOfRIGHTSubTree(nodeT * root)
+{
+	if (root == nullptr)
+		return 0;
 
-int main() {
-	BinaryT<int> * b = new BinaryT<int>();
-	for (int i = 5; i < 6; ++i)
-		b->insert(i);
-	for (int i = 4; i >= 0; --i)
-		b->insert(i);
+	return (1 + lengthOfRIGHTSubTree(root->right));
+}
 
-	b->print(b->root);
-	cout << endl;
+static bool flag = true;
+bool isBalancedTree(nodeT * root)
+{
+	//base case and input validation
+	if (root == nullptr)
+		return flag;
 
-	cout << TreeHeight(b->root) << endl;
+		//determine the length of the left subtree
+		int leftVal = lengthOfLEFTSubTree(root->left);
+
+		//determine the length of the right subtree
+		int rightVal = lengthOfRIGHTSubTree(root->right);
+		
+		//compare the difference and if it is greater than 1 - this is not a binary tree  - change static flag variable to false
+		if ( ( abs(leftVal - rightVal) ) > 1 ) {
+			flag = false;
+		}
 	
-	return 0;
+		//recursively iterate through every child of every node in the tree
+		isBalancedTree(root->left);
+		isBalancedTree(root->right);
+	
+	return flag;
 }
