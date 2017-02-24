@@ -114,20 +114,31 @@ bool TreeEqual( nodeT * selfRoot, nodeT * otherRoot )
 /*Problem 4: Trim Leaves
 Write a function that will take a binary tree and remove all its leaves
 */
-void TrimLeaves(nodeT * & tree)
+//helper function to test if node is a leaf
+bool TestLeaves(nodeT * & next)
 {
-	nodeT * runner = tree;
-	
-	//a Leaf has both child nodes empty
-	if (runner->left == nullptr && runner->right == nullptr)
-	{
-		delete runner;
-	}
-	else {
-		if (runner->left != nullptr)
-			TrimLeaves(runner->left);
-		if (runner->right != nullptr)
-			TrimLeaves(runner->right);
+	if (next != nullptr)
+		if (next->right == nullptr && next->left == nullptr)
+			return true;
+		else
+			return false;
+}
+
+void TrimLeaves(nodeT * & root)
+{
+	//check to ensure input is valid
+	if (root != nullptr) {
+		//test if the left child's child is a leaf and the right child's child is a leaf
+		if ( TestLeaves( root -> left ) && TestLeaves( root -> right) )
+		{
+			root->left = nullptr;
+			root->right = nullptr;
+		}
+		else {
+			//continue iterating through the tree
+			TrimLeaves(root->left);
+			TrimLeaves(root->right);
+		}
 	}
 }
 
